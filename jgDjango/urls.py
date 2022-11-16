@@ -14,7 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+# re_path 함수 추가로 불러오기
+from django.urls import path, include, re_path
+# static 파일을 제공하기 위한 serve 함수 불러오기
+from django.views.static import serve
+# settings.py의 개체 가져오기
+from django.conf import settings
 from page import views
 
 urlpatterns = [
@@ -24,3 +29,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('', views.index),
 ]
+
+# DEBUG가 False일 경우 static을 가져올 수 있도록 설정
+if settings.DEBUG == False:
+    urlpatterns += re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
