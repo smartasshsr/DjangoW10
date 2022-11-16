@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>모험을 떠나봅시다.</h1>
+
+  <p>당신은 <<{{character.weapon}}>>을 갖고 있습니다.</p>
+  <p>{{character.weapon}}의 공격력은 {{character.weapon.power}}입니다.</p>
+
+{% endblock %}

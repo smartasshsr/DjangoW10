@@ -1,0 +1,55 @@
+.button {
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: Khaki;
+  color: SaddleBrown;
+  text-decoration: none;
+}
+.posting__function--top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content : flex-direction 방향을 기준으로 정렬 */
+  justify-content: right;
+  padding-bottom: 20px;
+}
+.posting__list {
+  width: 100%;
+  margin: auto;
+  /* table-layout : fixed를 이용해 table 크기 고정 */
+  table-layout: fixed;
+}
+.posting__list th {
+  padding: 5px;
+  border-bottom: 2px solid;
+}
+.posting__list td {
+  padding: 5px 10px;
+  border-bottom: 1px solid;
+}
+.posting__list td a {
+  color: black;
+  text-decoration: none;
+}
+.posting__list td a:hover {
+  text-decoration: underline;
+}
+.posting__list .index {
+  width: 2rem;
+  text-align: center;
+}
+.posting__list .title {
+  /* overflow : 자식 요소가 부모 요소의 크기를 초과할 경우 처리 방법 */
+  overflow: hidden;
+  width: auto;
+  padding: 5px 20px;
+  /* white-space : 공백과 줄바꿈 처리 */
+  white-space: nowrap;
+  /* text-overflow : 넘치는 텍스트 처리 */
+  text-overflow: ellipsis;
+}
+.posting__list .date {
+  width: 6rem;
+  text-align: center;
+}

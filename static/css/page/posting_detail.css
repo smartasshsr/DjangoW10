@@ -1,0 +1,116 @@
+.button {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 3px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: Khaki;
+  color: SaddleBrown;
+  text-decoration: none;
+}
+.content {
+  display: flex;
+  justify-content: left;
+  /* min-height : 최소 높이 지정 */
+  /* 20vh : 현재 스크린의 높이를 기준으로 20%의 높이를 차지 */
+  min-height: 20vh;
+  margin: 10px 5px;
+}
+textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 1rem;
+  resize: vertical;
+}
+input[type=submit] {
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* 작성 글 */
+.posting__detail {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.posting__detail td {
+  padding: 10px;
+  border-bottom: 1.5px solid;
+}
+.posting__detail td.transparent {
+  border-color: transparent;
+}
+/* 작성 글 제목 */
+.posting__detail__title {
+  font-size: 1.5rem;
+}
+/* 작성 글 버튼 */
+.posting__detail__function {
+  width: 7rem;
+  white-space: nowrap;
+}
+.posting__detail__function > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 10px;
+}
+/* 댓글 */
+.posting__comment {
+  width: 100%;
+  margin-top: 30px;
+  background-color: PaleGoldenrod;
+  border-collapse: collapse;
+  /* table-layout: fixed; */
+}
+.posting__comment th {
+  padding: 20px 20px 10px;
+  text-align: left;
+}
+.posting__comment__create {
+  padding: 0 20px;
+  text-align: left;
+}
+/* 댓글 입력 */
+.posting__comment__create div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.posting__comment__create input[type=text] {
+  width: 100%;
+  height: 20px;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+/* 댓글 내용 */
+.posting__comment__content {
+  padding: 15px 30px 0px;
+}
+/* 댓글 삭제 */
+.posting__comment__delete {
+  width: 3rem;
+  text-align: center;
+}
+.posting__comment__delete input[type=submit] {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* 댓글 작성일 */
+.posting__comment__date {
+  padding: 10px 30px 0px;
+  color: Peru;
+  font-size: 0.8rem;
+}
+/* 댓글 구분선 */
+.posting__comment__line {
+  margin: 10px 20px 5px;
+  border: 0.5px solid SaddleBrown;
+}

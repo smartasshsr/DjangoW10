@@ -1,0 +1,43 @@
+.posting-form {
+  width: 90%;
+  margin: auto;
+}
+.posting-form__function--bottom {
+  /* text-align : 텍스트의 정렬 방향 */
+  text-align: right;
+}
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: Khaki;
+  color: SaddleBrown;
+  text-decoration: none;
+  font-size: 1rem;
+}
+input{
+  padding: 5px 10px;
+  /* font-family : 폰트 종류 */
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 1rem;
+}
+/* input[type=text] : input 태그 중 type 속성명의 속성값이 text인 태그에 css 적용 */
+input[type=text] {
+  width: 95%;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+input[type=submit] {
+  /* cursor : 커서 모양 변경 */
+  cursor: pointer;
+}
+textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 1rem;
+}

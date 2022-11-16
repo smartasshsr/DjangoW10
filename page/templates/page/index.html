@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/page/index.css' %}">
+{% endblock %}
+
+{% block body %}
+  <h1>메인 페이지</h1>
+  
+  <p>오늘의 목표</p>
+  <ol>
+    <li>새로운 앱을 생성해봅시다.</li>
+    <li>회원 관련 기능(회원가입, 로그인, 로그아웃)을 추가해봅시다.</li>
+    <li>글과 댓글 모델에 작성자를 추가해봅시다.</li>
+  </ol>
+
+  <img src="{% static 'images/walnut.jpg' %}" alt="walnut">
+{% endblock %}

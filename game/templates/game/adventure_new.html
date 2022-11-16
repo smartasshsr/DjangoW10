@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>첫 모험을 시작합니다.</h1>
+
+  <p>첫 무기는 랜덤으로 선택됩니다.</p>
+  <p>무기를 받으시겠습니까?</p>
+  <a href="{% url 'game:game_list' %}">돌아가기</a>
+  <a href="{% url 'game:weapon_get' %}">무기 받기</a>
+{% endblock %}
