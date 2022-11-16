@@ -134,4 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # [코드 추가] AUTH_USER_MODEL에 'auth.User'를 추가
 # [코드 추가] 외래키 모델을 문자열로 전달해주는 역할
-
+AUTH_USER_MODEL = 'auth.User' 

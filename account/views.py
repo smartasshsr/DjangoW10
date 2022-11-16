@@ -34,4 +34,7 @@ def login(request):
     return render(request, 'account/form.html', context)
 
 # [코드 작성] auth_logout 함수를 이용한 로그아웃 기능 구현
+def logout(request): 
+    auth_logout(request)
+    return redirect('page:index')
 

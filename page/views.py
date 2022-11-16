@@ -21,26 +21,27 @@ def posting_list(request):
 # [Create] 글 작성하기
 def posting_create(request):
     # [코드 작성] 웹 페이지에 로그인이 되어있는 경우만 글 쓰기가 가능하도록 조건문 작성
-    
-    if request.method == 'POST':
-        posting_form = PostingForm(request.POST)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            posting_form = PostingForm(request.POST)
+            
+            if posting_form.is_valid():
+                # [코드 작성] posting_form을 임시저장
+                # [코드 작성] posting_form의 author에 작성자 객체 추가
+                posting_form = posting_form.save(commit=False)
+                posting_form.author = request.user
+                posting_form.save()
+                return redirect('page:posting_list')
+        else:
+            posting_form = PostingForm()
         
-        if posting_form.is_valid():
-            # [코드 작성] posting_form을 임시저장
-            # [코드 작성] posting_form의 author에 작성자 객체 추가
-
-            posting_form.save()
-            return redirect('page:posting_list')
-    else:
-        posting_form = PostingForm()
-    
-    context = {
-        'posting_type': '글쓰기',
-        'posting_form': posting_form,
-    }
-    return render(request, 'page/posting_form.html', context)
+        context = {
+            'posting_type': '글쓰기',
+            'posting_form': posting_form,
+        }
+        return render(request, 'page/posting_form.html', context)
     # [코드 작성] 로그인이 되어있지 않은 경우 로그인 페이지로 돌아가도록 처리
-    
+    return redirect('account:login')
 
 # [Read & Create] 작성글 보기 & 댓글 작성
 def posting_detail(request, posting_id):
