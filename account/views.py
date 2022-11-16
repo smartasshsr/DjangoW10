@@ -8,10 +8,12 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('account:login')
+            return redirect('page:index')
     else:
         form = UserCreationForm()
     context = {
+        # [코드 작성] 화면에 '회원가입' 임을 알려줄 수 있도록 type 전달
+
         'form': form,
     }
     return render(request, 'account/form.html', context)
@@ -25,6 +27,11 @@ def login(request):
     else:
         form = AuthenticationForm()
     context = {
+        # [코드 작성] 화면에 '로그인' 임을 알려줄 수 있도록 type 전달
+
         'form': form,
     }
     return render(request, 'account/form.html', context)
+
+# [코드 작성] auth_logout 함수를 이용한 로그아웃 기능 구현
+

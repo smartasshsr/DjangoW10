@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/game/game_form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/game/game_adventure.css' %}">
+  {% endblock %}
 
 {% block body %}
-  <h1>첫 모험을 시작합니다.</h1>
+  <h1>{{user.character.nickname}}님의 모험을 시작합니다.</h1>
 
-  <p>첫 무기는 랜덤으로 선택됩니다.</p>
-  <p>무기를 받으시겠습니까?</p>
-  <a href="{% url 'game:game_list' %}">돌아가기</a>
-  <a href="{% url 'game:weapon_get' %}">무기 받기</a>
+  <p>모험에 필요한 무기는 랜덤으로 선택됩니다.</p>
+  <!-- [미션] random_weapon의 이름이 화면에 출력되도록 코드 작성 -->
+  <!-- [미션] ? 를 지우고 작성 -->
+  <p>? 무기가 선택되었습니다.</p>
+  <p>이 무기를 받으시겠습니까?</p>
+
+  <a href="">다시 선택하기</a>
+  <!-- [미션] game 앱의 weapon_get url로 이동하도록 action 안에 코드 작성 -->
+  <form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" name="random-weapon" value="{{random_weapon.id}}">무기 받기</button>
+  </form>
 {% endblock %}

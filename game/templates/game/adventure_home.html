@@ -1,9 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/game/game_form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/game/game_adventure.css' %}">
+{% endblock %}
 
 {% block body %}
-  <h1>모험을 떠나봅시다.</h1>
+  <div class="adventure">
+    <h1>{{character.nickname}}님, 모험을 떠나보세요!</h1>
 
-  <p>당신은 <<{{character.weapon}}>>을 갖고 있습니다.</p>
-  <p>{{character.weapon}}의 공격력은 {{character.weapon.power}}입니다.</p>
+    <p>당신은 <<{{character.weapon.name}}>> 무기를 갖고 있습니다.</p>
+    <p><<{{character.weapon.name}}>>의 공격력은 {{character.weapon.power}}입니다.</p>
 
+    <p>
+      <a href="">모험 떠나기</a>
+    </p>
+    <p>
+      <a href="">무기 공방</a>
+    </p>
+    <p>
+      <!-- [미션] game 앱의 game_list url로 이동하도록 action 안에 코드 작성 -->
+      <a href="">돌아가기</a>
+    </p>
+  </div>
 {% endblock %}

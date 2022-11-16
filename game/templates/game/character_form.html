@@ -2,15 +2,17 @@
 {% load static %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'css/game/character_create.css' %}">
+  <link rel="stylesheet" href="{% static 'css/game/game_form.css' %}">
 {% endblock %}
 
 {% block body %}
   <h1>캐릭터 생성</h1>
-
+  
   <form action="" method="post">
     {% csrf_token %}
-    {{character_form}}
-    <input type="submit" value="생성">
+    <div class="weapon">
+      {{character_form}}
+      <input type="submit" value="생성">
+    </div>
   </form>
 {% endblock %}
